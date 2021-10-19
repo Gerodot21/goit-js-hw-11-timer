@@ -22,21 +22,11 @@ class CountdownTimer {
 		const mins = this.pad(Math.floor((time % (1000 * 60 * 60)) / (1000 * 60)));
 		const secs = this.pad(Math.floor((time % (1000 * 60)) / 1000));
 
-		document.querySelector(
-			this.selector
-		).children[0].children[0].textContent = `${days}`;
-
-		document.querySelector(
-			this.selector
-		).children[1].children[0].textContent = `${hours}`;
-
-		document.querySelector(
-			this.selector
-		).children[2].children[0].textContent = `${mins}`;
-
-		document.querySelector(
-			this.selector
-		).children[3].children[0].textContent = `${secs}`;
+		const thisTimer = document.querySelector(this.selector);
+		thisTimer.children[0].children[0].textContent = `${days}`;
+		thisTimer.children[1].children[0].textContent = `${hours}`;
+		thisTimer.children[2].children[0].textContent = `${mins}`;
+		thisTimer.children[3].children[0].textContent = `${secs}`;
 	}
 
 	pad(value) {
